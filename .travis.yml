@@ -46,19 +46,19 @@ script:
 
 deploy:
   - provider: script
-    script: bash ci/deploy.sh dev
+    script: bash ci/deploy.sh dev ${TRAVIS_BUILD_NUMBER}
     skip_cleanup: true
     on:
       all_branches: true
       condition: $TRAVIS_BRANCH =~ ^(DATA-[0-9]+.*)|(epic-DATA-[0-9]+.*)$
   - provider: script
-    script: bash ci/deploy.sh staging
+    script: bash ci/deploy.sh staging ${TRAVIS_BUILD_NUMBER}
     skip_cleanup: true
     on:
       all_branches: true
       condition: $TRAVIS_BRANCH == master
   - provider: script
-    script: bash ci/deploy.sh prod
+    script: bash ci/deploy.sh prod ${TRAVIS_BUILD_NUMBER}
     skip_cleanup: true
     on:
       all_branches: true
