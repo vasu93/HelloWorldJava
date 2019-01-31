@@ -63,11 +63,3 @@ deploy:
     on:
       all_branches: true
       condition: $TRAVIS_BRANCH == release
-      
-  notifications:
-  email:
-    recipients:
-      - madhu.kotagiri007@gmail.com
-      - madhu.kotagiri007@gmail.com
-    on_success: always # default: change
-    on_failure: always # default: always
